@@ -1,0 +1,228 @@
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+body { margin: 0;  background: radial-gradient(ellipse at center, #e9eadc 19%,#adaca2 100%); }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+ul { list-style:none; margin:0; padding:0 }
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+[hidden], template { display: none }
+a { background: transparent }
+a:active, a:hover { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+dfn { font-style: italic }
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+mark {
+    background: #ff0;
+    color: #000
+}
+small { font-size: 80% }
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre { overflow: auto }
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+legend {
+    border: 0;
+    padding: 0
+}
+textarea { overflow: auto }
+optgroup { font-weight: bold }
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+td, th { padding: 0 }
+
+/******顶部跑马灯*********
+************************/
+.str_wrap {
+	overflow:hidden;
+	width:100%;
+	float: left;
+	font-size:12px;
+	position:relative;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;  
+	background:#f6f6f6;
+	white-space:nowrap;
+}
+.str_wrap{
+	padding-left: 3em;
+	padding-right: 3em;
+	background: #fefefe;
+	height: 100%;
+	line-height: 60px;
+	font-size: 1.2em;
+}
+.str_wrap.str_active {
+	background:#f1f1f1;
+}
+.str_move { 
+	white-space:nowrap;
+	position:absolute; 
+	top:0; 
+	left:0;
+	height: 100%;
+	cursor:move;
+}
+.str_move_clone {
+	display:inline-block;
+	vertical-align:top;
+	position:absolute; 
+	left:100%;
+	top:0;
+}
+.str_vertical .str_move_clone {
+	left:0;
+	top:100%;
+}
+.str_down .str_move_clone {
+	left:0;
+	bottom:100%;
+}
+.str_vertical .str_move,
+.str_down .str_move {
+	white-space:normal;
+	width:100%;
+}
+.str_static .str_move,
+.no_drag .str_move,
+.noStop .str_move{
+	cursor:inherit;
+}
+.str_wrap img {
+	max-width:none !important;	
+}
+
+
+/******页面尾部*********
+************************/
+footer{
+    text-align: center;
+    z-index: 99;
+    font-size: 15px;
+    line-height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    margin: 10px auto;
+}
+footer a{
+    text-decoration: none;
+    text-align: center;
+}
+footer p{
+    text-align: center;
+}
+footer .connect{
+    background:url('../images/ico.png') no-repeat;
+    background-position-y:0px;
+    background-size:150px 150px;
+    position: relative;
+    width:50px;
+    height:50px;
+    margin: 0 auto;
+    margin-right: 20px;
+    display: inline-block;
+    transition: all .3s;
+    -moz-animation: all .3s; /* Firefox 4 */
+    -webkit-animation: all .3s; /* Safari 和 Chrome */
+    -o-animation: all .3s; /* Opera */
+    border-radius: 25px;
+}
+footer .connect .img{
+    transform: translate(-45%,-100%);
+    -moz-transform: translate(-45%,-100%); /* Firefox 4 */
+    -webkit-transform: translate(-45%,-100%); /* Safari 和 Chrome */
+    -o-transform: translate(-45%,-100%); /* Opera */
+    position:absolute;
+    top:-10px;
+    display:none;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+    -moz-shadow: 0 0 5px rgba(0, 0, 0, .7); /* Firefox 4 */
+    -webkit-shadow: 0 0 5px rgba(0, 0, 0, .7); /* Safari 和 Chrome */
+    -o-shadow: 0 0 5px rgba(0, 0, 0, .7); /* Opera */
+}
+footer .connect:hover .img{
+    display:block;
+}
+footer .connect:hover{
+    background-position-y:-50px;
+    transition: all .3s;
+    -moz-transition: all .3s; /* Firefox 4 */
+    -webkit-transition: all .3s; /* Safari 和 Chrome */
+    -o-transition: all .3s; /* Opera */
+}
+#btn_top{
+    position:fixed;bottom:21px;right:21px;display: none;
+}

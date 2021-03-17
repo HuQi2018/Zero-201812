@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie7" lang="zh"><![endif]-->
+<!--[if gt IE 7]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" type="image/x-icon" href="https://cas.sju.edu.cn/tpass/comm/image/newicon.ico">
+<title>外链框架</title>
+<script src="js/modernizr.js"></script>
+<link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="js/classie.js"></script> 
+<script src="js/gnmenu.js"></script> 
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+    var myurl=GetQueryString("url");
+    var type=GetQueryString("type");
+    if(type=='weixin'){
+        wx(myurl,"#frame");
+    }else if(myurl !=null && myurl.toString().length>1)
+    {
+       $("#frame").attr("src",myurl);
+    }else{
+        keyword=prompt("读取错误，请填写外链地址！","http://www.");
+        window.location.href = "iframe.html?url="+keyword;
+        document.getElementById("iframe").innerHTML="<h1 style='color:red;text-align: center;'>读取错误，请填写外链地址！</h1>";
+    }
+});
+</script>
+</head>
+<body>
+<div class="container">
+    <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger"> <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+            <nav class="gn-menu-wrapper">
+                <div class="gn-scroller">
+                    <ul class="gn-menu">
+                        <li class="gn-search-item"><input placeholder="百度搜索" type="search" class="gn-search" onkeydown="entersearch()"><a class="gn-icon gn-icon-search"><span>Search</span></a></li>
+                        <li><a href="iframe.html?url=http://www.sju.edu.cn" class="gn-icon gn-icon-archive">三江学院官网</a></li>
+                        <li><a href="iframe.html?url=https://my.sju.edu.cn" class="gn-icon gn-icon-archive">智慧三江</a></li>
+                        <li><a href="iframe.html?url=http://opac.sju.edu.cn" class="gn-icon gn-icon-archive">三江图书馆</a></li>
+                        <li><a href="http://jw.sju.edu.cn" target="_blank" class="gn-icon gn-icon-archive">三江教务处</a></li>
+                        <li><a href="https://www.weibo.com/u/3996546313" target="_blank" class="gn-icon gn-icon-archive">三江官方微博</a></li>
+                    </ul>
+                    <footer>
+                        <div class="conect">
+                            <a href="https://uni.mp.qq.com/page/jump?url=http%3A%2F%2Fpost.mp.qq.com%2Fhtml%2Fjumpto.html%3Fcmd%3D0%26puin%3D995269681">
+                                <div class="connect" style="background-position-x:0px;">
+                                    <img class="img" style="" src="images/qq.png" alt="">
+                                </div>
+                            </a>
+                            <a href="http://weixin.qq.com/r/MJlxkAIg4A4UTgizHsL5qKY">
+                                <div class="connect" style="background-position-x:-100px;">
+                                    <img class="img" style="" src="images/weixin.png" alt="">
+                                </div>
+                            </a>
+                            <a href="https://weibo.cn/u/3177818340">
+                                <div class="connect" style="background-position-x:-50px;">
+                                    <img class="img" style="" src="images/weibo.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <p>友情链接：<a href="http://www.sju.edu.cn">三江学院官网</a>&nbsp;&nbsp;<a href="https://weibo.com/u/3996546313">三江官方微博</a></p>
+                        <p>Copyright © 2018 Zero All Rights Reserved</p>
+                        <p>Powered by Wonder | 苏ICP备18023091号</p>
+                    </footer>
+                </div>
+                <!-- /gn-scroller --> 
+            </nav>
+        </li>
+        <li><a href="index.html"><span>首页</span></a></li>
+        <li><a href="lishi.html"><span>辉煌三江</span></a></li>
+        <li><a href="now.html"><span>腾飞三江</span></a></li>
+        <li><a href="future.html"><span>展望三江</span></a></li>
+        <li><a href="javascript:history.back(-1);"><span>返回上一页</span></a></li>
+    </ul>
+    <div id="iframe" style="height:100%;">
+        <iframe id="frame" src="" frameborder="0"></iframe>
+    </div>
+    <script>
+        /***菜单栏***/
+        new gnMenu( document.getElementById( 'gn-menu' ) );
+    </script>
+    <div id="btn_top">
+        <a href="#top"><img src="images/scrollup.png" alt="返回顶部" /></a>
+    </div>
+</div>
+</body>
+</html>

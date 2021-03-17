@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+        <title>传奇三江</title>
+        <link rel="stylesheet" type="text/css" href="css/style1.css" />
+        <link rel="icon" type="image/x-icon" href="https://cas.sju.edu.cn/tpass/comm/image/newicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!--<script src="js/prefixfree.min.js"></script>-->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+		<!--<script src="js/modernizr.js"></script>-->
+        <link rel="stylesheet" href="css/button.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+    </head>
+    <body>
+        <!--<ul class="cb-slideshow">-->
+        <!--    <li><span>Image 01</span></li>-->
+        <!--    <li><span>Image 02</span></li>-->
+        <!--    <li><span>Image 03</span></li>-->
+        <!--    <li><span>Image 04</span></li>-->
+        <!--    <li><span>Image 05</span></li>-->
+        <!--    <li><span>Image 06</span></li>-->
+        <!--</ul>-->
+        <div class="md-modal md-effect-18" id="modal-18">
+            <div class="md-content">
+                <!--<h3>Modal Dialog</h3>-->
+                <video style="width: 100%;" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-fullscreen="false" x5-video-player-type="h5" controls="controls" poster="images/index.png" id="video">
+        			<source src="movie/index.mp4" type="video/mp4">
+        		</video>
+                <button class="md-close">Close me!</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" />
+            </div>
+            <div class="xiaoxun">
+                <img src="images/xiaoxun.png" />
+            </div>
+            <button class="md-trigger md-setperspective" data-modal="modal-18">我爱三江!</button>
+            <div class="wrapper">
+                <ul class="stage clearfix">
+                    <li class="scene">
+                        <div class="movie" onclick="return true">
+                            <div class="poster"></div>
+                            <div class="info">
+                                <header>
+                                    <h1>Retro</h1>
+                                    <span class="year">1992</span>
+                                </header>
+                                <div class="content" id="typing">
+                                        <p>从历史中来</p>
+                                        <p>到历史中去</p>
+                                    <h1><a href="lishi.html">辉煌三江</a></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="scene">
+                        <div class="movie" onclick="return true">
+                            <div class="poster"></div>
+                            <div class="info">
+                                <header>
+                                    <h1>Now</h1>
+                                    <span class="year">2018</span>
+                                </header>
+                                <div class="content" id="typing">
+                                        <p>唯实求真</p>
+                                        <p>开拓创新</p>
+                                    <h1><a href="now.html">腾飞三江</a></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="scene">
+                        <div class="movie" onclick="return true">
+                            <div class="poster"></div>
+                            <div class="info">
+                                <header>
+                                    <h1>Future</h1>
+                                    <span class="year">2020</span>
+                                </header>
+                                <div class="content" id="typing">
+                                        <p>展望未来</p>
+                                        <p>谱写新章</p>
+                                    <h1><a href="future.html">展望三江</a></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <script type="text/javascript" charset="utf-8">
+                $('.movie').mouseenter( function(){
+                    var a=$(this);
+                    if(!a.hasClass("use")){
+                        a.addClass("use");
+                        var index=$('.main .year').index(a.find("#typing").children('p'));
+                        a.find("#typing").children('p:eq(0)').addClass("typing");
+                        window.setTimeout(function(){
+                            a.find("#typing").children('p:eq(0)').removeClass("typing");
+                            a.find("#typing").children('p:eq(0)').css("display","block");
+                            a.find("#typing").children('p:eq(1)').addClass("typing");
+                        }, 5000);
+                    }
+                });
+            </script>
+            <footer>
+                <div class="conect">
+                    <a href="https://uni.mp.qq.com/page/jump?url=http%3A%2F%2Fpost.mp.qq.com%2Fhtml%2Fjumpto.html%3Fcmd%3D0%26puin%3D995269681">
+                        <div class="connect" style="background-position-x:0px;">
+                            <img class="img" style="" src="images/qq.png" alt="">
+                        </div>
+                    </a>
+                    <a href="http://weixin.qq.com/r/MJlxkAIg4A4UTgizHsL5qKY">
+                        <div class="connect" style="background-position-x:-100px;">
+                            <img class="img" style="" src="images/weixin.png" alt="">
+                        </div>
+                    </a>
+                    <a href="https://weibo.cn/u/3177818340">
+                        <div class="connect" style="background-position-x:-50px;">
+                            <img class="img" style="" src="images/weibo.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                <p>友情链接：<a href="http://www.sju.edu.cn">三江学院官网</a>&nbsp;&nbsp;<a href="https://weibo.com/u/3996546313">三江官方微博</a></p>
+                <p>Copyright © 2018 Zero All Rights Reserved</p>
+                <p>Powered by Wonder | 苏ICP备18023091号</p>
+            </footer>
+            <!-- /wrapper --> 
+        </div>
+        <!-- /container --> 
+        <div class="md-overlay"></div>
+        <script>
+            /**按钮弹出**/
+            var polyfilter_scriptpath = '/js/';
+        </script>
+        <script src="js/button.js"></script>
+    </body>
+</html>

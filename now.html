@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>腾飞三江</title>
+<link rel="icon" type="image/x-icon" href="https://cas.sju.edu.cn/tpass/comm/image/newicon.ico">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<link href='css/now.css' type='text/css' rel='stylesheet'>
+<link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/photo.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css" />
+<script src="js/classie.js"></script> 
+<script type="text/javascript" src="js/chart/echarts.min.js"></script>
+<script src="js/gnmenu.js"></script> 
+<script type="text/javascript" src="js/now.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger"><a href="" class="gn-icon gn-icon-menu"><span>menu</span></a>
+            <nav class="gn-menu-wrapper">
+                <div class="gn-scroller">
+                    <ul class="gn-menu">
+                        <li class="gn-search-item"><input placeholder="百度搜索" type="search" class="gn-search" onkeydown="entersearch()"><a class="gn-icon gn-icon-search"><span>Search</span></a></li>
+                        <li><a href="iframe.html?type=weixin&url=https://mp.weixin.qq.com/s/9dzNOc9fIFSmDhP8crCmKQ" class="gn-icon gn-icon-article">三江简介</a></li>
+                        <li><a href="iframe.html?type=weixin&url=https://mp.weixin.qq.com/s/hYswy3ZiIyqlg0gFRotlVA" class="gn-icon gn-icon-article">2018新生大数据</a></li>
+                        <!--<li><a class="gn-icon gn-icon-photoshop">现在的三江</a></li>-->
+                        <!--<li><a href="" class="gn-icon gn-icon-archive">Archives</a></li>-->
+                    </ul>
+                    <footer style="/*position:relative;margin:40px auto;*/">
+                        <div class="conect">
+                            <a href="https://uni.mp.qq.com/page/jump?url=http%3A%2F%2Fpost.mp.qq.com%2Fhtml%2Fjumpto.html%3Fcmd%3D0%26puin%3D995269681">
+                                <div class="connect" style="background-position-x:0px;">
+                                    <img class="img" style="" src="images/qq.png" alt="">
+                                </div>
+                            </a>
+                            <a href="http://weixin.qq.com/r/MJlxkAIg4A4UTgizHsL5qKY">
+                                <div class="connect" style="background-position-x:-100px;">
+                                    <img class="img" style="" src="images/weixin.png" alt="">
+                                </div>
+                            </a>
+                            <a href="https://weibo.cn/u/3177818340">
+                                <div class="connect" style="background-position-x:-50px;">
+                                    <img class="img" style="" src="images/weibo.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <p>友情链接：<a href="http://www.sju.edu.cn">三江学院官网</a>&nbsp;&nbsp;<a href="https://weibo.com/u/3996546313">三江官方微博</a></p>
+                        <p>Copyright © 2018 Zero All Rights Reserved</p>
+                        <p>Powered by Wonder | 苏ICP备18023091号</p>
+                    </footer>
+                </div>
+                <!-- /gn-scroller --> 
+            </nav>
+        </li>
+        <li><a href="index.html"><span>首页</span></a></li>
+        <li><a href="lishi.html"><span>辉煌三江</span></a></li>
+        <li><a href="future.html"><span>展望三江</span></a></li>
+        <li><a href="javascript:history.back(-1);"><span>返回上一页</span></a></li>
+    </ul>
+    <div id="dowebok">
+        <div class="main">
+            <section class="section banner">
+                <div class="center-wrap">
+                    <h1>最新在校生数据统计图表</h1>
+                    <div id="chart">
+                        <div id="outerWrap">
+                            <div id="sliderParent"></div>
+                            <div class="blueline" id="blueline" style="top: 0px; "></div>
+                            <ul class="tabGroup">
+                                <li class="tabOption selectedTab">在校本科生籍贯分布</li>
+                                <li class="tabOption">各学院在校本科生人数</li>
+                                <li class="tabOption">在校男女生比例</li>
+                            </ul>
+                            <div id="container">
+                                <div id="content">
+                                    <div class="tabContent  selectedContent" style="">
+                                        <h3>在校本科生籍贯分布</h3>
+                                        <div id="jg-map" class="chart">
+                                            <div id="china-map" style="position: relative; -ms-user-select: none; -webkit-tap-highlight-color: transparent;" _echarts_instance_="ec_1544927575502"><div style="border-width: 0px; margin: 0px; padding: 0px; width: 100%; height: 795px; overflow: hidden; position: relative; cursor: pointer;"><canvas style="border-width: 0px; margin: 0px; padding: 0px; left: 0px; top: 0px; width: 100%; height: 795px; position: absolute; -ms-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" data-zr-dom-id="zr_0"></canvas></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="tabContent" style="">
+                                        <h3>各学院在校本科生人数</h3>
+                                        <div id="chart1" class="chart"></div>
+                                    </div>
+                                    <div class="tabContent" style="">
+                                        <h3>在校男女生比例</h3>
+                                        <div id="chart2" class="chart"></div><button class="btn invisible" id="backButton">&lt; Back</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript" src="js/chart/event.js"></script>
+                        <script type="text/javascript" src="js/chart/tween.js"></script>
+                        <script type="text/javascript" src="js/chart/china.js"></script>
+                        <script type="text/javascript" src="js/chart/chart.js"></script>
+                        <script type="text/javascript" src="js/chart/canvasjs.min.js"></script>
+                    </div>
+                </div>
+            </section>
+            <section class="section thin">
+                <div class="center-wrap">
+                    <div class="btn">
+                        <a id="yyyp" class="btn-change" onclick="change('yyyp');">一院一品</a>
+                        <a id="xyhd" class="btn-change" onclick="change('xyhd');">校园活动</a>
+                    </div>
+			        <div class="grid3d vertical /*vertical horizontal*/" id="grid3d">
+			        	<!--<div class="grid-wrap">-->
+			        	<!--	<div class="grid">-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/tWzBWXyXOIJlBkXq4nQlGw','#frame1')"><img src="images/now/yyyp/dianzi.jpg" alt="一院一品丨恰同学青年，风华正茂（电子信息工程学院）" title="一院一品丨恰同学青年，风华正茂（电子信息工程学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/W3D7is3wk226-ZOv19ERWg','#frame2')"><img src="images/now/yyyp/falv.jpg" alt="一院一品丨模拟法庭（法律与知识产权学院）" title="一院一品丨模拟法庭（法律与知识产权学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/7XcHbrJzg9AIRoPIMj2azg','#frame3')"><img src="images/now/yyyp/jianzhu.jpg" alt="一院一品丨用心点燃希望，用爱筑梦未来（建筑学院）" title="一院一品丨用心点燃希望，用爱筑梦未来（建筑学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/SGy12fngxqePAM7Mhp6IyQ','#frame4')"><img src="images/now/yyyp/jisuanji.jpg" alt="一院一品丨创意设计“码”出未来（计算机科学与工程学院）" title="一院一品丨创意设计“码”出未来（计算机科学与工程学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/6Ek_fngqyqDbnEKppsEHjQ','#frame5')"><img src="images/now/yyyp/jixie.jpg" alt="一院一品丨竞赛学文化，挥笔摹芳华（机械与电气工程学院）" title="一院一品丨竞赛学文化，挥笔摹芳华（机械与电气工程学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/GBVsvtm7e6hCtd5Vwxabnw','#frame6')"><img src="images/now/yyyp/lvyou.jpg" alt="一院一品丨禅茶一味，品禅意生活~（文化产业与旅游管理学院）" title="一院一品丨禅茶一味，品禅意生活~（文化产业与旅游管理学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/lzYSIf1kLLDyvWZDf6R8XQ','#frame7')"><img src="images/now/yyyp/nanxiaoqu.jpg" alt="一院一品丨南区“网”事（南校区）" title="一院一品丨南区“网”事（南校区）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/E_-TdufRY7Syia7dkWNeMA','#frame8')"><img src="images/now/yyyp/tumu.jpg" alt="一院一品 | 弘扬国学经典，谈古论今，纵观天下。（土木工程学院）" title="一院一品 | 弘扬国学经典，谈古论今，纵观天下。（土木工程学院）"/></a></figure>-->
+			        	<!--		<figure><a href="javascript:wx('https://mp.weixin.qq.com/s/6pxcJwNFNIUnCVaKtg6K3Q','#frame9')"><img src="images/now/yyyp/xinwen.jpg" alt="一院一品丨体味世界光影 感知人间冷暖（文学与新闻传播学院）" title="一院一品丨体味世界光影 感知人间冷暖（文学与新闻传播学院）"/></a></figure>-->
+			        	<!--	</div>-->
+			        	<!--</div>-->
+			        	<!--<div class="content">-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame1"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame2"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame3"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame4"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame5"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame6"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame7"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame8"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<div>-->
+			        	<!--	    <iframe src="" frameborder="0" id="frame9"></iframe>-->
+			        	<!--	</div>-->
+			        	<!--	<span class="loading"></span>-->
+			        	<!--	<span class="icon close-content"></span>-->
+			        	<!--</div>-->
+			        </div>
+		            <script src="js/classie.js"></script>
+		            <script src="js/helper.js"></script>
+		            <script src="js/grid3d.js"></script>
+			        <script type="text/javascript" charset="utf-8">
+                        var data = {
+                                        "yyyp":[{
+                                                "url": "https://mp.weixin.qq.com/s/tWzBWXyXOIJlBkXq4nQlGw",
+                                                "name": "一院一品丨恰同学青年，风华正茂（电子信息工程学院）",
+                                                "photo": "dianzi",
+                                                "group": "电子信息工程学院",
+                                                "title": "一院一品丨恰同学青年，风华正茂",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/W3D7is3wk226-ZOv19ERWg",
+                                                "name": "一院一品丨模拟法庭（法律与知识产权学院）",
+                                                "photo": "falv",
+                                                "group": "法律与知识产权学院",
+                                                "title": "一院一品丨模拟法庭",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/7XcHbrJzg9AIRoPIMj2azg",
+                                                "name": "一院一品丨用心点燃希望，用爱筑梦未来（建筑学院）",
+                                                "photo": "jianzhu",
+                                                "group": "建筑学院",
+                                                "title": "一院一品丨用心点燃希望，用爱筑梦未来",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/SGy12fngxqePAM7Mhp6IyQ",
+                                                "name": "一院一品丨创意设计“码”出未来（计算机科学与工程学院）",
+                                                "photo": "jisuanji",
+                                                "group": "计算机科学与工程学院",
+                                                "title": "一院一品丨创意设计“码”出未来",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/6Ek_fngqyqDbnEKppsEHjQ",
+                                                "name": "一院一品丨竞赛学文化，挥笔摹芳华（机械与电气工程学院）",
+                                                "photo": "jixie",
+                                                "group": "机械与电气工程学院",
+                                                "title": "一院一品丨竞赛学文化，挥笔摹芳华",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/GBVsvtm7e6hCtd5Vwxabnw",
+                                                "name": "一院一品丨禅茶一味，品禅意生活~（文化产业与旅游管理学院）",
+                                                "photo": "lvyou",
+                                                "group": "文化产业与旅游管理学院",
+                                                "title": "一院一品丨禅茶一味，品禅意生活~",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/lzYSIf1kLLDyvWZDf6R8XQ",
+                                                "name": "一院一品丨南区“网”事（南校区）",
+                                                "photo": "nanxiaoqu",
+                                                "group": "南校区",
+                                                "title": "一院一品丨南区“网”事",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/E_-TdufRY7Syia7dkWNeMA",
+                                                "name": "一院一品 | 弘扬国学经典，谈古论今，纵观天下。（土木工程学院）",
+                                                "photo": "tumu",
+                                                "group": "土木工程学院",
+                                                "title": "一院一品 | 弘扬国学经典，谈古论今，纵观天下。",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/6pxcJwNFNIUnCVaKtg6K3Q",
+                                                "name": "一院一品丨体味世界光影 感知人间冷暖（文学与新闻传播学院）",
+                                                "photo": "xinwen",
+                                                "group": "文学与新闻传播学院",
+                                                "title": "一院一品丨体味世界光影 感知人间冷暖",
+                                            }
+                                        ],
+                                        "xyhd":[{
+                                                "url": "https://mp.weixin.qq.com/s/o95R3HPBspMuJZgKP_q9Ew",
+                                                "name": "社巡开幕丨“廿年不忘，路与星光”，场游园嗨翻了三江！",
+                                                "photo": "shexunkai",
+                                                "group": "社巡开幕",
+                                                "title": "廿年不忘，路与星光”，场游园嗨翻了三江！",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/sINBg0XcVG9uBz6447ajMQ",
+                                                "name": "十佳歌手丨昨夜，星球之外的璀璨“音”河，你听见了吗？",
+                                                "photo": "music",
+                                                "group": "十佳歌手",
+                                                "title": "昨夜，星球之外的璀璨“音”河，你听见了吗？",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/4PMF8vHZt2G24v812JlMBg",
+                                                "name": "Colorfour十四周年庆丨我能想到最酷的事就是和你一起跳街舞",
+                                                "photo": "colorfour",
+                                                "group": "Colorfour十四周年庆",
+                                                "title": "我能想到最酷的事就是和你一起跳街舞",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/rolyvl2W5CHs_sonEALJsw",
+                                                "name": "大艺团十周年 “艺”彩纷呈",
+                                                "photo": "dayituan",
+                                                "group": "大艺团",
+                                                "title": "大艺团十周年 “艺”彩纷呈",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/l_J2aJCkLuAm092zv2iVBQ",
+                                                "name": "动漫社专场丨“动”出精彩，“漫”看人生",
+                                                "photo": "cartoon",
+                                                "group": "动漫社专场",
+                                                "title": "“动”出精彩，“漫”看人生",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/MI4c65qDddx_d0Zjjo0jEQ",
+                                                "name": "秦淮诗社专场 | 古韵凌波，醉梦秦淮，今夜我们一起穿越古今~",
+                                                "photo": "qinghuai",
+                                                "group": "秦淮诗社专场",
+                                                "title": "古韵凌波，醉梦秦淮，今夜我们一起穿越古今~",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/KpLc0_3dIGKqK425kdUbwQ",
+                                                "name": "话剧社专场丨走进《旋转卡门》，领略话剧舞台魅力",
+                                                "photo": "huaju",
+                                                "group": "话剧社专场",
+                                                "title": "走进《旋转卡门》，领略话剧舞台魅力",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/NVW7YbBEhsQfU9bXHtJ3lA",
+                                                "name": "戏曲协会专场丨看生旦净丑，专属三江的“一出好戏”",
+                                                "photo": "xiqu",
+                                                "group": "戏曲协会专场",
+                                                "title": "看生旦净丑，专属三江的“一出好戏”",
+                                            }, {
+                                                "url": "https://mp.weixin.qq.com/s/sB3R56YFzhMRGsqrpdFs-g",
+                                                "name": "廿年不忘，路与星光丨社团二三事儿，不说再见～",
+                                                "photo": "shexun",
+                                                "group": "社巡闭幕",
+                                                "title": "廿年不忘，路与星光丨社团二三事儿，不说再见～",
+                                            }
+                                        ]
+                                    };
+                                    var effect = [" effect3 bottom_to_top", " colored effect3 bottom_to_top", " effect3 top_to_bottom", " colored effect3 top_to_bottom", " colored effect4", " colored effect6 top_to_bottom", " colored effect6 from_left_and_right", " effect6 from_left_and_right", " effect6 top_to_bottom", " colored effect6 from_top_and_bottom", " effect6 from_top_and_bottom", " effect7", " colored effect7", " colored effect8 scale_down", " effect8 scale_down", " colored effect8 scale_up", " effect8 scale_up", " effect10 left_to_right", " colored effect10 left_to_right", " effect10 right_to_left", " colored effect10 right_to_left", " effect10 top_to_bottom", " colored effect10 top_to_bottom", " effect10 bottom_to_top", " colored effect10 bottom_to_top", " effect11 left_to_right", " colored effect11 left_to_right", " effect11 right_to_left", " colored effect11 right_to_left", " effect11 top_to_bottom", " colored effect11 top_to_bottom", " effect11 bottom_to_top", " colored effect11 bottom_to_top", " effect13 left_to_right", " colored effect13 left_to_right", " effect13 right_to_left", " colored effect13 right_to_left", " effect13 top_to_bottom", " colored effect13 top_to_bottom", " effect13 bottom_to_top", " colored effect13 bottom_to_top"];
+                                    var rotation         = ['flipped-vertical-bottom', 'flipped-vertical-top', 'flipped-horizontal-left', 'flipped-horizontal-right'];
+                                    //Math.floor(Math.random()*(max+1));parseInt(Math.random()*(max+1),10);//两种方法生成【0，max】随机数
+                                    
+                        function change(id){
+                            
+                            var fram='<div class="grid-wrap"><div class="grid">';
+                            var random=Math.floor(Math.random()*(41+1));
+	                        for(var j=0;j<9;j++){
+	                            fram = fram+'<figure style="animated flipped-vertical-top"><div class="ih-item square'+effect[random]+'"><a href="javascript:wx(\''+data[id][j].url+'\',\'#frame'+(j+1)+'\')"><div class="img"><img src="images/now/'+id+'/'+data[id][j].photo+'.jpg" alt="'+data[id][j].name+'" title="'+data[id][j].name+'"/></div><div class="info"><h3>'+data[id][j].group+'</h3><p>'+data[id][j].title+'</p></div></a></div></figure>';
+	                        }
+	                        fram=fram+'</div></div><div class="content"><div><iframe src="" frameborder="0" id="frame1"></iframe></div><div><iframe src="" frameborder="0" id="frame2"></iframe></div><div><iframe src="" frameborder="0" id="frame3"></iframe></div><div><iframe src="" frameborder="0" id="frame4"></iframe></div><div><iframe src="" frameborder="0" id="frame5"></iframe></div><div><iframe src="" frameborder="0" id="frame6"></iframe></div><div><iframe src="" frameborder="0" id="frame7"></iframe></div><div><iframe src="" frameborder="0" id="frame8"></iframe></div><div><iframe src="" frameborder="0" id="frame9"></iframe></div><span class="loading"></span><span class="icon close-content"></span></div>';
+                            $("#grid3d").html(fram);
+		            	    new grid3D( document.getElementById( 'grid3d' ) );
+                            // for( var i = 0; i <= 8; i++ ) {
+                            //     randoma     = Math.floor( Math.random() * ( 3 - 0 + 1 ) );
+                            //     animation  = rotation[randoma];
+                            //     item       = $('.grid').children('figure:eq(' + i + ')');
+                            //     item.addClass('animated ' + animation);
+                            //     window.setTimeout(function (index) {
+                            //         return function () {
+                            //             var fram='<div class="grid-wrap"><div class="grid">';
+                            //             var random=Math.floor(Math.random()*(41+1));
+	                           //         for(var j=0;j<9;j++){
+	                           //             fram = fram+'<figure><div class="ih-item square'+effect[random]+'"><a href="javascript:wx(\''+data[id][j].url+'\',\'#frame'+(j+1)+'\')"><div class="img"><img src="images/now/'+id+'/'+data[id][j].photo+'.jpg" alt="'+data[id][j].name+'" title="'+data[id][j].name+'"/></div><div class="info"><h3>'+data[id][j].group+'</h3><p>'+data[id][j].title+'</p></div></a></div></figure>';
+	                           //         }
+	                           //         fram=fram+'</div></div><div class="content"><div><iframe src="" frameborder="0" id="frame1"></iframe></div><div><iframe src="" frameborder="0" id="frame2"></iframe></div><div><iframe src="" frameborder="0" id="frame3"></iframe></div><div><iframe src="" frameborder="0" id="frame4"></iframe></div><div><iframe src="" frameborder="0" id="frame5"></iframe></div><div><iframe src="" frameborder="0" id="frame6"></iframe></div><div><iframe src="" frameborder="0" id="frame7"></iframe></div><div><iframe src="" frameborder="0" id="frame8"></iframe></div><div><iframe src="" frameborder="0" id="frame9"></iframe></div><span class="loading"></span><span class="icon close-content"></span></div>';
+                            //             $("#grid3d").html(fram);
+		            	             //   new grid3D( document.getElementById( 'grid3d' ) );
+                            //         };
+                            //     } (i), 500);
+                                        
+                            //     item.on('transitionend webkitTransitionEnd MSTransitionEnd oTransitionEnd', function() { 
+                            //         $(this).removeClass();
+                            //     });
+                            // }
+                        }
+                        change('yyyp');
+		          //  	new grid3D( document.getElementById( 'grid3d' ) );
+                    </script>
+                </div>
+            </section>
+            <section class="section flyme">
+                <div class="center-wrap">
+                    <div>
+		                <div id="jssor_1" style="position: relative; margin: 0 auto; top: 20px; left: 0px; height: 650px; overflow: hidden; visibility: hidden; background-color: #24262e;">
+	                         <!--Loading Screen -->
+	                        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+	                            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+	                            <div style="position:absolute;display:block;background:url('images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+	                        </div>
+	                        <div class="slides" data-u="slides" style="cursor: default; position: relative; top: 0px; left: 240px; width: 1100px; height: 650px; overflow: hidden;">
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo1.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo2.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo3.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo4.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo5.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo6.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo7.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo8.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo9.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo10.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo11.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo12.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo13.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo14.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo15.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo16.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo17.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo18.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo19.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo20.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo21.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo22.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo23.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo24.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo25.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo26.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo27.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo28.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo29.jpg" /></div>
+	                            <div data-p="150.00"><img data-u="image" src="images/now/siji/photo30.jpg" /></div>
+	                            <script type="text/javascript" charset="utf-8">
+	                               // var list = ["spring","summer","autumn","winter"];
+	                               // var num = ["78","37","65","132"];
+	                               // var div="";
+	                               // var i=1;
+	                               //// for(var i=0;i<4;i++){
+	                               //     for(var j=1;j<=num[i];j++){
+	                               //         div = div+'<div data-p="150.00"><img data-u="image" src="images/now/'+list[i]+"/photo"+j+'.jpg" /></div>';
+	                               //     }
+	                               //// }
+	                               //document.write(div);
+	                            </script>
+	                        </div>
+	                         <!--Thumbnail Navigator -->
+	                        <div data-u="thumbnavigator" class="jssort01-99-66" style="position:absolute;left:0px;top:0px;width:240px;height:650px;" data-autocenter="2">
+	                            <h1 style="padding-top:15px;color:#09513a;">三江四季</h1>
+	                             <!--Thumbnail Item Skin Begin -->
+	                            <div data-u="slides" style="cursor: default;">
+	                                <div data-u="prototype" class="p">
+	                                    <div class="w">
+	                                        <div data-u="thumbnailtemplate" class="t"></div>
+	                                    </div>
+	                                    <div class="c"></div>
+	                                </div>
+	                            </div>
+	                             <!--Thumbnail Item Skin End -->
+	                        </div>
+	                         <!--Arrow Navigator -->
+	                        <span data-u="arrowleft" class="jssora05l arrow" style="top:0px;left:248px;width:40px;height:40px;" data-autocenter="2"></span>
+	                        <span data-u="arrowright" class="jssora05r arrow" style="top:0px;right:8px;width:40px;height:40px;" data-autocenter="2"></span>
+	                    </div>
+	                     <!--#endregion Jssor Slider End -->
+	                </div>
+	                <script src="js/jssor.slider-21.1.6.min.js" type="text/javascript"></script>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="btn_top">
+        <a><img src="images/scrollup.png" alt="返回顶部" /></a>
+    </div>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script> if(!Modernizr.csstransforms3d) document.getElementById('information').style.display = 'block'; new gnMenu( document.getElementById( 'gn-menu' ) );</script>
+</div>
+</body>
+</html>
